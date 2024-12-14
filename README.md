@@ -37,8 +37,7 @@ Default Mode: In this mode, the program will process a default document (LinearA
 To run the program in default mode:
 
 docker run --rm rag-document-assistant 
-Custom Mode: 
-In custom mode, you provide your own document file (in text format) and the specific question you want to ask.
+Custom Mode: In custom mode, you provide your own document file (in text format) and the specific question you want to ask.
 
 If you want to use a file from your host machine (e.g., a custom PDF file), you can mount the file into the container using the -v flag:
 
