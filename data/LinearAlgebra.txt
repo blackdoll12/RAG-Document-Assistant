@@ -1,0 +1,976 @@
+
+
+LINEAR ALGEBRA
+REFRESHER MATH 2018
+On the first day we concentrated on single equations, possibly of more than one vari-
+able, of a variety of function types. Linear algebra is the study of vectors and linear
+functions of vectors. The input is a vector, the output is a vector, and the transforma-
+tion is through a linear function of vectors (called a linear map, linear operator or linear
+transformation). Vectors are objects that satisfy additivity and scalar multiplication.
+Most functions of vectors do not satisfy these requirements - linear algebra is the study
+of functions of vectors that do.
+Vectors
+A vector is a vertical or horizontal array of numbers or mathematical objects. Vectors are
+indicated in the following as bold-face lower-case type (in some fields the symbol is ~v):
+v =
+
+
+v1
+v2
+..
+.
+vn
+
+
+is a vector and vT = (v1 v2 ... vn) is the transpose of v also called a row vector. Unit
+vectors are indicated with carets, ˆv and the zero vector as 0.
+Additivity. Let v and w be vectors of the same dimension, then
+v ±w =
+
+
+
+v1 ±w1
+v2 ±w2
+..
+.
+vn ±wn
+
+
+
+Scalar multiplication. A scalar λ times a vector gives a vector with each element
+multiplied by the scalar:
+λv =
+
+
+
+λv1
+λv2
+..
+.
+λvn
+
+
+
+Linear independence. Vectors v, w, u ∈ Rn. Vector u can be expressed as a linear
+combination of vectors v and w:
+u = λ1v + λ2w
+1
+That is, we can use v and w as a base for other vectors. For example, suppose
+v =
+(1
+3
+)
+w =
+(2
+1
+)
+u =
+(0
+1
+)
+Write u as a linear combination of v and w by solving for the constants λ1 and λ2 such
+that
+λ1 + 2λ2 = 0
+3λ1 + λ2 = 1
+Solving for the constants gives λ1 = 2/5 and λ2 = −1/5.
+Consider a set of vectors A = v1,v2,...,vr all vectors in Rn. If r > 2 and there exists
+at least one vector that can be written as a linear combination of the others, then the
+set A (or the vectors) are linearly dependent. In the example above v, w, u are linearly
+dependent because u = 2/5v −1/5w. If no vector in the set A can be written as a linear
+combination of the other vectors then the set A (or the vectors) are linearly independent.
+An alternative statement of the definition follows. The collection of vectors is linearly
+independent if the only scalars that satisfy
+λ1v1 + λ2v2 + ... + λrvr = 0
+are λ1 = λ2 = ... = λr = 0. Any vector in Rn can be expressed as a linear combination
+of n independent vectors in Rn.
+Vector spaces. A vector space is a collection of vectors and the operators of addition
+and scalar multiplication for which the space is closed under these operations. For exam-
+ple, R2 is a vector space: any 2 linearly independent vectors form a basis for R2 generating
+all possible vectors in the space; it is closed in that addition and scalar multiplication of
+vectors result in other vectors in R2. The graphical basis of a vector space is usually the
+unit vectors, in R2,
+e1 =
+(1
+0
+)
+e2 =
+(0
+1
+)
+.
+The vector (1,3)T = 1e1 + 3e2.
+Inner product. Multiplication of 2 vectors is a dot product (sum of products of corre-
+sponding elements of 2 sequences), called the inner product, denoted as 〈v,w〉
+〈v,w〉= v ·w = vT w = Σni=1xiyi.
+Note that while the sum of two vectors or the scalar multiplication of a vector results in
+a vector, the inner product results in a scalar.
+On a real vector space, an inner product < , > satisfies the following four properties.
+Let u, v, and w be vectors and α be a scalar, then:
+• < u + v,w >=< u,w > + < v,w >
+2
+• < αv,w >= α < v,w >
+• < v,w >=< w,v >
+• < v,v >≥0 and < v,v >= 0 if and only if v = 0.
+Orthogonal vectors. Two vectors v and w are orthogonal iff 〈v,w〉 = 0,. In R2 the
+basis are perpendicular and the inner product is null. An orthonormal basis has basis
+vectors of unit length where the length of a vector is given by the Euclidean norm
+‖v ‖= 〈v,v〉1/2 = (Σni=1x2i )1/2
+Then to convert a vector into a unit vector simply divide the elements by the vector length
+q =
+(q1
+q2
+)
+ˆq = 1
+‖q ‖
+(q1
+q2
+)
+.
+Matrices
+A matrix is a rectangular array of numbers (or mathematical objects) in m rows and n
+columns, enclosed in round or square brackets. Matrices will be indicated by upper-case
+letters.
+A =
+
+
+a11 a12 ... a1n
+a21 a22 ... a2n
+... ... . . . ...
+am1 am2 ... amn
+
+
+where aij are elements of matrix A, 1 ≤ i ≤ m, a ≤ j ≤ n. Note that ORDER is
+ESSENTIAL, first rows, then columns.
+Matrices are a concise and useful way of representing and working with systems of
+linear equations. If m = n the matrix is called a square matrix.
+A triangular matrix is a square matrix for which all elements above the diagonal are
+zero while non-zero below, or all elements below the diagonal are zero while non-zero
+above:
+A =
+
+
+a11 a12 a12
+0 a22 a23
+0 0 a33
+
+
+A diagonal matrix is a square matrix with nonzero diagonal elements but all off-
+diagonal elements are zero:
+
+
+a11 0 0
+0 a22 0
+0 0 a33
+
+ aij = 0 ∀i 6= j
+3
+An identity matrix is a diagonal matrix with all diagonal elements equal to 1 and all
+other elements zero, and it plays a similar role to 1 for scalars:
+
+
+1 0 0
+0 1 0
+0 0 1
+
+
+Generally the identity matrix has a single index, for example the above is denoted I3.
+A null matrix is a square matrix with aij = 0 ∀i,j and is like a 0 for real numbers.
+A symmetric matrix is a square matrix with off-diagonal elements aij = aji for all i,j
+:
+A =
+
+
+a11 a12 a13
+a12 a22 a23
+a13 a23 a33
+
+
+An idempotent matrix is a matrix for which when multiplied by itself, results in a
+matrix identical to itself. Of course, the matrix must be square. But it also must be such
+that A = A2 = A3 = .... The identity matrix I2 is idempotent. Here is a 3x3 idempotent
+matrix: 
+
+2 −2 −4
+−1 3 4
+1 −2 −3
+
+
+Special matrices of derivatives
+Some arrays of partial derivatives are used in various applications.
+The gradient with symbol ∇, nabla, is the vector of 1st-order partial derivatives of a
+single multi-variable equation:
+∇f(x1,x2) =
+( ∂f
+∂x1
+∂f
+∂x2
+)
+The gradient is to a multivariable function as the slope at a point (derivative) to a single-
+variable function. The gradient at any location points in the direction of greatest increase.
+For example, it gives the direction to go for the fastest increase in the value of the function.
+Gradient descent is used to move toward a minimum of a (usually cost) function.
+The Hessian matrix, also denoted as ∇2, is the square array for all 2nd-order partial
+derivates of a multi-variable function. Again let f(x1,x2), then
+Hf(x1,x2) =
+
+
+∂2f
+∂x21
+∂2f
+∂x1∂x2
+∂2f
+∂x2∂x1
+∂2f
+∂x22
+
+
+Note that by Young’s Theorem the Hessian matrix is symmetric. Gradients and Hessians
+are used in optimization problems, the first- and second-order conditions are checked
+through the gradient vector and Hessian matrix respectively.
+4
+The Jacobian matrix is the matrix of all 1st-order partial derivatives of a system of
+equations. For a system G composed of m functions in m variables, let DG denote the
+Jacobian matrix:
+DG(x1,x2,...,xm) =
+
+
+∂G1
+∂x1
+∂G1
+∂x2 ... ∂G1
+∂xm
+∂G2
+∂x1
+∂G2
+∂x2 ... ∂G2
+∂xm
+... ... . . . ...∂Gm
+∂x1
+∂Gm
+∂x2 ... ∂Gm
+∂xm
+
+
+The first row is the partial derivative of the first function with respect to each of the
+variables, the second row is the partial derivative of the second function with respect to
+each of the variables, etc. The Jacobian matrix is used in dynamical systems theory as
+a local representation of a system of multivariable nonlinear functions at a given point
+(usually a fixed point). It is the Taylor series approximation for the system truncated
+after the first derivative, that is, the linear approximation.
+Applications
+An example of optimization. Consider the cost function
+J(x1,x2) = 2x21 + 2x22 + 4x1x2
+The goal is to minimize the cost by choosing the minimum over the two-variable space.
+The first order condition is given by the gradient
+∇J(x∗1,x∗2) =
+(4x1 + 4x2
+4x2 + 4x1
+)
+=
+(0
+0
+)
+The Hessian is
+∇2J(x∗1,x∗2) =
+(4 4
+4 4
+)
+Recall that for a minimum the convexity of the function is required. Then the second-order
+conditions are that the second-order partial derivatives are positive and their product is
+larger than the product of the cross partials. The second-order partials are on the diagonal,
+both positive. The product of these is equal to the product of the cross partials and the
+second derivative test is inconclusive, the point (x∗1,x∗2) could be a minimum, maximum
+or saddle point.
+Rank of a matrix
+The rank of a matrix Amxn is the maximum number of linearly independent columns
+(which equals the maximum number of independent rows) of a matrix. The rank(Amxn) ≤
+min(m,n). It can be shown that the row rank of A equals the column rank of A, so the
+5
+rank can be no larger than the minimum number of rows and columns. Rank(A4x3) ≤
+min(4,3) ≤ 3. One can think of the matrix as being composed of 3 column 4-vectors,
+which could be linearly independent, or 4 row 3-vectors which cannot be. The maximum
+rank(A) is 3.
+To determine the rank of a matrix use elementary row operations to reduce the original
+matrix to the echelon form: such that the first non-zero element in each row (the leading
+entry) is 1; each leading entry is in a column to the right of the leading entry in the row
+above it; rows with all zero elements are below rows having a non-zero element. These
+operations are usually tedious, an example follows. The steps represented: (i) exchange
+r1 and r2; (ii) −2r1 added to r2 and −r1 added to r4; 2r1 added to r3 and r2 added to r4;
+-1(r2) and −4r3 added to r4.
+B =
+
+
+2 −1 3
+1 0 1
+0 −2 1
+1 1 4
+
+ →
+
+
+1 0 1
+2 −1 3
+0 −2 1
+1 1 4
+
+ →
+
+
+1 0 1
+0 −1 1
+0 −2 1
+0 1 3
+
+ →
+
+
+1 0 1
+0 −1 1
+0 0 1
+0 0 4
+
+ →
+
+
+1 0 1
+0 −1 1
+0 0 1
+0 0 0
+
+
+Because there are only 3 rows with nonzero elements in the echelon form, rank(B) is 3.
+Matrix algebra
+Solving simple matrix equations is similar to solving equations EXCEPT:
+• there is no operation of division
+• matrix multiplication is not commutative.
+But let’s take the operators one at a time. The matrices Amxn, Bmxn, Cnxq (with m,
+n and q different numbers) are as follows:
+A =
+
+
+a11 a12 ... a1n
+a21 a22 ... a2n
+... ... . . . ...
+am1 am2 ... amn
+
+ B =
+
+
+b11 b12 ... b1n
+b21 b22 ... b2n
+... ... . . . ...
+bm1 bm2 ... bmn
+
+ C =
+
+
+c11 c12 ... c1q
+c21 c22 ... c2q
+... ... . . . ...
+cn1 cn2 ... cnq
+
+
+• Addition and subtraction, defined only if the matrices have the same order. Because
+A and B have the same number of rows and colums then:
+A ±B =
+
+
+a11 ±b11 a12 ±b12 ... a1n ±b1n
+a21 ±b21 a22 ±b22 ... a2n ±b2n
+... ... . . . ...
+am1 ±bm1 am2 ±bm2 ... amn ±bmn
+
+
+6
+• Scalar multiplication, multiply each element by the scalar. If k is a constant
+kA =
+
+
+ka11 ka12 ... ka1n
+ka21 ka22 ... ka2n
+... ... . . . ...
+kam1 kam2 ... kamn
+
+
+• Multiplication is more complicated and requires that the matrices be conformable,
+that is, the number of columns of the first matrix equals the number of rows of
+the second. Because matrix A has n columns and matrix C has n rows, matrix
+multiplication is defined for AC = D. Each element dij of the product matrix will
+be the sum of the products of the ith row times the jth column:
+dij = Σnk=1aikckj
+Consider the case that
+A2x3 =
+(1 3 5
+2 4 6
+)
+B3x2 =
+
+
+3 6
+1 4
+5 2
+
+
+Is D = AB well-defined? Yes, there are 3 columns in A and 3 rows in B: D2x2 is
+A2x3B3x2 = D2x2 =
+((1x3) + (3x1) + (5x5) (1x6) + (3x4) + (5x2)
+(2x3) + (4x1) + (6x5) (2x6) + (4x4) + (6x2)
+)
+=
+(31 28
+40 40
+)
+Is BA conformable? Would BA = AB? Would AD or DA be defined? Because the
+order in which matrices are multiplied matters, we use the terms pre-multiply and
+post-multiply (or left and right multiplication) to describe the exact operation as
+they do not give the same result. As warned, multiplication is NOT commutative.
+• A matrix raised to a power requires the matrix to be square. Let Emxm be a square
+matrix then En = E ×E ×... ×E n times and Enmxm is also an m by m square
+matrix.
+A summary of the main properties for matrices follows. Assume that the the matrices A,
+B, C are such that all of the operations below are defined.
+7
+ADDITION PROPERTIES
+Associative (A + B) + C = A + (B + C)
+Commutative A + B = B + A
+Additive identity A + 0 = 0 + A = A
+Additive inverse A + (−A) = (−A) + A = 0
+MULTIPLICATIVE PROPERTIES
+Associate property A(BC) = (AB)C
+Multiplicative identity AI = IA = A
+Multiplictive inverse if A is square and A−1 exists,
+then AA−1 = A−1A = I
+COMBINED PROPERTIES
+Left distributive A(B + C) = AB + AC
+Right distributive (B + C)A = BA + CA
+EQUALITY
+Addition if A = B then A + C = B + C
+Left multiplication if A = B then CA = CB
+Right multiplication if A = B then AC = BC
+Transpose of a matrix
+The transpose AT of a matrix A is the matrix for which the rows of A become the columns
+(and the columns of A become the rows of AT ). For example:
+A2x3 =
+(1 2 3
+4 5 6
+)
+AT3x2 =
+
+
+1 4
+2 5
+3 6
+
+.
+Then, given the definition of a symmetric matrix, if A = AT , A is symmetric. Here is
+an example:
+A3x3 =
+
+
+1 2 3
+2 4 5
+3 5 6
+
+ = AT .
+Here are some useful properties of transposes.
+• (AT )T = A, exchanging columns and rows twice results in the original matrix.
+• (A + B)T = AT + BT , you can add first and then exchange or exchange first and
+then add.
+• (AmxnBnxm) = (AB)mxm and (AB)T is also mxm. But ATnxmBTmxn = AT BT which
+is nxn. Therefore (AB)T 6= AT BT . The true relation is: (AB)T = BTmxnATnxm which
+is mxm.
+8
+Matrix representation of a system of equations
+Linear systems can be written as vectors and matrices. Consider the system:
+x + 2y = 10 (1)
+3x + 4y = 20 (2)
+To represent system (10)-(11) in matrix form, let
+A ≡
+(1 2
+3 4
+)
+x ≡
+(x
+y
+)
+b ≡
+(10
+20
+)
+.
+where A is called the coefficient matrix, x is a vector of variables, and b is a vector of
+scalars. System (10)-(11) can be written in matrix notation as the matrix equation
+Ax = b
+and a solution can be found by pre-multiplying both sides of the equation by the inverse
+of the matrix A (we will get to inverses of matrices later). The matrix A is also called the
+linear operator or linear transformation.
+Trace and Determinant of a Square Matrix
+The trace and determinant are quantities based on the elements of a square matrix. They
+are useful when using matrix algebra to determine if a solution to a system of equations
+exists and, if it exists, to determine the solution.
+Trace of a matrix
+The trace of a matrix is defined over square matrices as the sum of the diagonal elements:
+trAnxn = Σni=1aij ∀i = j.
+The trace of the product of 2 conformable matrices resulting in a square matrix equals
+the trace of the square matrix that results from multiplying them in the reversed order:
+tr(AmxnBnxm) = tr(BnxmAmxn)
+because the diagonal elements are equal.
+For example, if
+A2x3 =
+(2 1 3
+2 1 4
+)
+B3x2 =
+
+
+3 1
+2 −1
+1 0
+
+.
+AB =
+(11 1
+12 1
+)
+BA =
+
+
+8 4 13
+2 1 −2
+2 1 3
+
+
+then tr(AB) = 12 = tr(BA).
+9
+Determinant of a matrix
+Like the trace, a determinant is a quantity calculated from the elements of a square
+matrix. The determinant is very useful when analyzing and solving systems of linear
+equations. Unfortunately for matrices of order 3x3 or larger, the procedure is tedious and
+we generally let algorithms accomplish the task. In order to get some intuition about the
+determinant we begin by defining it for a 2x2 matrix.
+determinant of a square matrix of order 2
+In the case of a matrix A2x2, the determinant is equal to the product of diagonal elements
+minus the product of off-diagonal elements:
+det A = det
+(a11 a12
+a21 a22
+)
+=
+∣∣∣∣a11 a12
+a21 a22
+∣∣∣∣ = a11a22 −a21a12.
+To indicate the determinant of a matrix the square or rounded brackets are replaced
+by straight lines.
+The matrix A is singular if det A = 0 and non-singular if det A 6= 0. This is an
+important characteristic of a matrix in the analysis of systems of equations as we will see
+later.
+determinant of a square matrix of order n
+Before we can outline the procedure to calculate the determinant of higher order matrices
+we need some definitions.
+The minor Mij of a square matrix Anxn is the determinant of the n−1 by n−1 matrix
+formed by eliminating the ith row and the jth column of A. For example:
+A3x3 =
+
+
+2 1 4
+5 2 3
+8 7 3
+
+ M12 =
+∣∣∣∣5 3
+8 3
+∣∣∣∣ = 15 −24 = −9.
+A cofactor Cij of a matrix A is equal to Mij if i + j is even, −Mij if i + j is odd:
+Cij = (−1)i+j Mij C12 = (−1)3(−9) = 9
+Note that minors and cofactors are scalars.
+The following procedure to evaluate the determinant of a square matrix of order n is
+called cofactor expansion.
+• choose 1 row (or 1 column) for the expansion (note, choose the one with the most
+zeros)
+10
+This Mona Lisa example is taken from the wikipedia page on eigenvalues and eigen-
+vectors In the transformation the red arrow changes direction but the blue arrow does
+not. The blue arrow is an eigenvector of the mapping it does not cause a rotation. In this
+case the eigenvalue is 1 so that the length is unaltered.
+More on eigenvalues/vectors
+The number of eigenvalues and eigenvectors depends on the order of the square matrix A.
+The characteristic equation written as a matrix equation det(A −λIn) = 0 is the same,
+but the characteristic polynomial, of degree n gets more difficult to solve explicitely. For
+a matrix 3x3 the characteristic polynomial is
+λ3 −a1λ2 + a2λ −a3 a1 = trA,a3 = det A.
+Polynomials of 3rd and 4th degree can be solved, though it is tedious. But for n ≥ 5 it
+has been shown that explicit solutions are not possible and iterative algorithms will be
+necessary to estimate them.
+Here are some useful properties of eigenvalues.
+• Eigenvectors with distinct eigenvalues are linearly independent, that is, if A is an
+nxn square matrix and S = {q1,q2,q3,...,qp}is a set of eigenvectors with eigenval-
+ues λ1,λ2, ...,λp such that λi 6= λj whenever i 6= j, then S is a linearly independent
+set.
+• Singular matrices have zero eigenvalues. If A is a square matrix, then A is singular
+if and only if λ = 0 is an eigenvalue of A. Then one indication that a matrix is
+nonsingular is that no eigenvalue of the matrix equals zero.
+19
+• Eigenvalues of a scalar multiple of a matrix are scalar multiples of the original
+eigenvalues. If A is a square matrix and λ is an eigenvalue of A, then αλ is an
+eigenvalue of αA.
+• Eigenvalues of matrix powers are powers of the original. If A is a square matrix, λ
+an eigenvalue of A, and s ≥0 is an integer, then λs is an eigenvalue of As.
+• Eigenvalues of the inverse of a square, nonsingular matrix A are the inverse of the
+orginal that is λ−1 is an eigenvalue of A−1.
+• Eigenvalues of a square matrix A are also eigenvalues of the the transpose of the
+matrix, AT .
+• A triangular matrix has the eigenvalues equal to the elements on the trace.
+There are also theorems about repeated eigenvalues, but we will stop here.
+Diagonalization of a symmetric matrix
+Recall that a symmetric matrix A is a square matrix for which AT = A. The elements of
+a symmetric matrix are symmetric with respect to the main diagonal, that is, aij = aji.
+It the matrix is not symmetric it can be transformed in various procedures by using the
+average of the associated unequal elements. For example in the eigenvalue example the
+non-symmetric 2x2 matrix can be transformed into a symmetric matrix B as follows
+A =
+( 0 1
+−2 −3
+)
+B =
+( 0 (1 −2)/2
+(1 −2)/2 −3
+)
+=
+( 0 −1/2
+−1/2 −3
+)
+In what follows we use the following symmetric matrix for simplicity’s sake:
+A =
+(4 2
+2 1
+)
+=⇒tr = 5,det = 0 λ1,2 = 5 ±√25 −4 ·0
+2 = 5 ±5
+2 =⇒λ1 = 5,λ2 = 0
+According to the properties above, because an eigenvalue is zero the matrix A is
+singular. In fact |A|= 0.
+The normalized eigenvectors are
+q1 =
+(2/√5
+1/√5
+)
+q2 =
+( 1/√5
+−2/√5
+)
+.
+The two normalized eigenvectors of a symmetric matrix are orthogonal:
+qT1 q2 = (2/√5 1/√5)
+[ 1/√5
+−2/√5
+]
+= 2/5 −2/5 = 0
+It is also true that qT1 q1 = 1 and qT2 q2 = 1 as they have been constructed to have unit
+length. Let Q be the matrix formed by using the two eigenvectors as the columns
+20
+Q =
+(2/√5 1/√5
+1/√5 −2/√5
+)
+and QT Q =
+(1 0
+0 1
+)
+= I2
+A matrix Q is an orthogonal matrix if QT Q = QQT = I with the result that its transpose
+is also its inverse QT = Q−1.
+In general, if A is a symmetrix matrix the eigenvectors corresponding to distinct
+eigenvalues are pairwise orthogonal and form an orthogonal matrix. The orthogonal
+matrix of eigenvectors diagonalizes the symmetrix matrix A. For example, if A is 3x3:
+QT AQ = Λ Λ =
+
+
+λ1 0 0
+0 λ2 0
+0 0 λ3
+
+
+The diagonalization of A through the orthogonal matrix composed of the associated nor-
+malized eigenvectors results in a diagonal matrix whose elements are the eigenvalues.
+Using the symmmetric matrix A and the normalized eigenvectors found above we have
+QT AQ =
+(2/√5 1/√5
+1/√5 −2/√5
+)(4 2
+2 1
+)(2/√5 1/√5
+1/√5 −2/√5
+)
+=
+(5 0
+0 0
+)
+.
+If A is a nonsymmetric matrix and the eigenvectors can be arranged into a non-singular
+matrix Q then again Q can be used to diagonalize the nonsymmetric matrix
+Q−1AQ = Λ
+but Q is not an orthogonal matrix in these cases.
+Quadratic forms
+Quadratic refers to an expression of second degree. Quadratic forms are expressions in
+which each term has degree two (that is, the sum of the exponents of each term is two),
+for instance
+ax21 + 2hx1x2 + bx22 a,b,h ∈R
+Quadratic forms are the most simple functions after linear functions. They are used, for
+example, to represent the second-order conditions for multivariate optimization problems,
+the objective function of risk minimization problems in finance where risk is measured
+by quadratic variance, and in the estimation of parameter values in statistics. They have
+matrix representations as symmetric matrices, for example:
+A =
+(4 2
+2 1
+)
+x =
+(x1
+x2
+)
+21
+Then
+xT Ax = (x1 x2)
+(4 2
+2 1
+)(x1
+x2
+)
+= (4x1 + 2x2 2x1 + x2)
+(x1
+x2
+)
+= ([4x1 + 2x2]x1 + [2x1 + x2]x2)
+= 4x21 + 4x1x2 + x22
+a polynomial in quadratic form.
+Notice that the same quadratic form is determined by a non-symmetric matrix
+B =
+(4 1
+3 1
+)
+that can be made symmetric by replacing aij and aji by their average.
+The general quadratic form in two variables is given by xT Ax
+A =
+(a11 a12
+a21 a22
+)
+x =
+(x1
+x2
+)
+with scalar expression q(x) = xT Ax
+q(x) = a11x21 + a12x1x2 + a21x2x1 + a22x22.
+For a nxn matrix and an nx1 vector x the quadratic form is the scalar function
+q(x) = xT Ax =
+n∑
+i=1
+n∑
+j=1
+aij xixj
+Again, if A is not symmetric then a symmetric matrix can be defined that gives the same
+quadratic form as A.
+Note that the coefficients of the product xixj in the scalar expression are the sum of
+the aij and aji elements in the matrix. An example follows.
+A =
+
+
+1 4 7
+4 2 5
+7 5 3
+
+ x =
+
+
+x1
+x2
+x3
+
+
+Then
+xT Ax = (x y z)
+
+
+1 4 7
+4 2 5
+7 5 3
+
+
+
+
+x1
+x2
+x3
+
+
+= x21 + 8x2x1 + 14x3x1 + 2x22 + 10x3x2 + 3x23.
+22
+Properties of quadratic forms
+We define the definiteness of a quadratic form as
+• positive definite if xT Ax > 0 for all x 6= 0 then A is a positive definite matrix
+• positive semidefinite if xT Ax ≥ 0 for all x 6= 0 then A is a positive semidefinite
+matrix
+• negative definite if xT Ax < 0 for all x 6= 0 then A is a negative definite matrix
+• negative semidefinite if xT Ax ≤ 0 for all x 6= 0 then A is a negative semidefinite
+matrix
+If a quadratic form is positive for some x and negative for some other it is called
+indefinite and A is an indefinite matrix.
+The eigenvalues of a matrix are related to definiteness. The symmetric matrix A is
+• positive definite if and only if all its eigenvalues are strictly positive
+• positive semidefinite if and only if all its eigenvalues are nonnegative
+• negative definite if and only if all its eigenvalues are strictly negative
+• negative semidefinite if and only if all its eigenvalues are nonpositive
+• indefinite if at least one eigenvalue is positive and at least one is negative.
+If A is positive definite (negative definite), then A−1 exists and is also positive definite
+(negative definite).
+Another method of arriving at the definiteness of a matrix is to use the signs of the
+leading principle minors. For a square nxn matrix a principal submatrix of order k is
+obtained by removing n − k rows and columns of the matrix. The leading principal
+submatrices of order k (1 ≤ k ≤ n), denoted Ak, are those obtained by removing the
+LAST n −k rows and columns. Let DAk denote the kth order leading principal minor,
+that is, the determinant of the kth order leading principal submatrix, then given a 3x3
+matrix
+A =
+
+
+a11 a12 a13
+a21 a22 a23
+a31 a32 a33
+
+ DA1 = a11 DA2 =
+∣∣∣∣a11 a12
+a21 a22
+∣∣∣∣ DA3 = |A|
+The definiteness of a symmetric matrix A is determined by the signs of the DAk. The
+matrix A is
+• positive definite if and only if all DAk are strictly positive
+23
+• negative definite if and only if DAk alternate in sign starting with negative,
+|A1|< 0, |A2|> 0, |A3|< 0...
+• if some DAk is nonzero but does not fit either of the above sign patterns, then A is
+indefinite.
+If some DAk is zero, but the others fit one of the sign patterns, the matrix is not definite,
+but is not necessarily semidefinite.
+• A is positive semidefinite if and only if every principal minor of A is ≥0.
+• A is negative semidefinite if and only if every principal minor of odd order is ≤ 0
+and every principal minor of even order is ≥0.
+Consider the quadratic form for
+A =
+
+
+1 0 0
+0 3 0
+0 0 1
+
+ xT Ax = (x1 x2 x3)
+
+
+1 0 0
+0 3 0
+0 0 1
+
+
+
+
+x1
+x2
+x3
+
+ = x21 + 3x22 + x23
+which is always positive and thus positive definite for non-zero xi and so the matrix A is
+positive definite. We reach the same conclusion using the fact that all of the eigenvalues
+(which are on the diagonal of A) are strictly positive, and using the leading principal
+minors 1, 3, 3, which are all positive.
+For the symmetric matrix
+A =
+(4 2
+2 1
+)
+=⇒λ1 = 5,λ2 = 0
+and the quadratic form 4x21 + 4x1x2 + x22 = (2x1 + x2)2 ≥ 0 always unless x2 = −2x1
+so the matrix is positive semidefinite. The latter is also found from the eigenvectors of
+which one is positive and one is zero. Here the first-order principal minors are 4 and 1
+both greater than zero. There is only one second-order principal minor, the determinant
+of the matrix itself, and it is equal to 0 so the matrix is positive semidefinite based on the
+principal minors conditions.
+An interesting use of the definiteness of a matrix is in the second-order conditions of
+an optimization problem. Suppose the function to optimize is f(x), x ∈ R2 and f is
+continuous and twice-differentiable. If ∇f(x∗) =0 and the Hessian H(f(x∗)) is positive
+definite, f has a strict local minimum at x∗; if H is negative definite f has a strict local
+maximum at x∗; if H is indefinite, f has a saddle point at x∗. We can say a function is
+convex if H is positive definite and concave if H is negative definite.
+24
+Converting a quadratic form to a diagonal form
+Diagonal forms are at times more simple to work with because there are no cross product
+terms. Let x = Qy where Q is the orthogonal matrix of eigenvectors which diagonalises
+the symmetric matrix A, and let Λ be the diagonal matrix with the elements on the
+diagonal equal to the eigenvalues of the matrix A.
+Consider the quadratic form xT Ax:
+xT Ax = (Qy)T A(Qy)
+= (yT QT )A(Qy
+= yT (QT AQ)y
+= yT Λy
+=
+n∑
+i=1
+λiy2i
+The diagonal form gives the equivalence of xT Ax and λ1y21 + λ2y22 + ... + λny2n
+As an example we have the symmetric matrix A, with Q the matrix of eigenvectors of
+A and Λ the diagonal matrix with eigenvalues as elements on diagonal
+A =
+(4 2
+2 1
+)
+Q = 1√5
+(2 1
+1 −2
+)
+Λ =
+(5 0
+0 0
+)
+.
+Then we can write the quadratic form without cross products as
+xT Ax = yT Λy
+4x21 + 4x1x2 + x22 = 5y21
+which is much simpler.
+Because the change of variable is a monotonic transformation one can always return
+to the original variable. Consider x = Qy and y = Q−1x and given Q is orthogonal
+Q−1 = QT and y = QT x (y1
+y2
+)
+= 1√5
+(2 1
+1 −2
+) (x1
+x2
+)
+.
+which gives
+y1 = 1√5 (2x1 + x2) 5y21 = 5
+(1
+5 (2x1 + x2)2
+)
+= 4x21 + 4x1x2 + x22
+y2 = 1√5 (x1 −2x2) 0y22 = 0
+(1
+5 (x1 −2x2)2
+)
+= 0
+Symmetric matrices are useful, Hessians are symmetric for example, and symmetric
+matrices can be diagonalized. The eigenvalues of symmetric matrices are necessarily real.
+25
+For the generic symmetric matrix
+A =
+(a b
+b c
+)
+the eigenvalues are
+λ1,2 = tr(A) ±√(tr(A))2 −4 det(A)
+2
+and discriminant ∆
+∆ = (a + c)2 −4ac + 4b2 = (a −c)2 + (2b)2 > 0
+ensures real eigenvalues. But if the square matrix is not symmetric it is quite common
+to find complex eigenvalues, and these provide interesting information about the system
+represented in the matrix equation. We next turn to some basic concepts in complex
+numbers and circular functions.
+26

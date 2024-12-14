@@ -1,0 +1,4 @@
+What is a matrix ?
+What is a diagonal matrix ?
+What is a vector?
+What is an helicopter ?
