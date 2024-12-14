@@ -28,7 +28,7 @@ Once the image is built, you can run the container:
 docker run  rag-document-assistant
 This will start the application inside the container and execute the src/main.py file.
 
-# Running the Program
+## Running the Program
 
 The system can be run using command-line arguments. You can run the program in two modes: default mode (using predefined documents) and custom mode (where you provide your own document and question).
 
