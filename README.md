@@ -2,20 +2,20 @@
 This project implements a Retrieval-Augmented Generation (RAG) system that can retrieve relevant information from large documents (such as technical manuals, legal documents, or reports) and generate accurate answers to specific questions.
 By combining document retrieval with a language model, the system provides enhanced information retrieval and generation capabilities.
 
-#The main components include:
+## The main components include:
 
 A document preprocessor that breaks down large documents into smaller, searchable chunks and turns them into embeddings using the distilroberta model.
 A retrieval mechanism that retrieves the most relevant information based on a user query.
 A generative model (flan T5) that generates answers based on the retrieved information.
 
-#Requirements
+# Requirements
 Software Requirements:
 Docker (for containerization)
 Python 3.7+ (for local development)
 Required Python libraries (see requirements.txt):
 You can install the dependencies manually by running:
 
-#Docker Setup
+# Docker Setup
 Clone the repository:
 git clone https://github.com/your-repository/document-assistant-rag.git
 Go to the main folder
