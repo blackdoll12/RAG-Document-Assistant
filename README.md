@@ -41,5 +41,5 @@ Custom Mode: In custom mode, you provide your own document file (in text format)
 
 If you want to use a file from your host machine (e.g., a custom PDF file), you can mount the file into the container using the -v flag:
 
-docker run --rm -v /path/on/host:/app/data rag-document-assistant python src/main.py --file_path /app/data/MyDocument.pdf --question "What is a matrix?"
+docker run --rm -v /path/on/host:/app/data rag-document-assistant python src/main.py --file_path /app/data/MyDocument.txt --question "What is a matrix?"
 
