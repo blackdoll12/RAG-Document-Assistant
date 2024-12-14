@@ -42,5 +42,5 @@ In custom mode, you provide your own document file (in text format) and the spec
 
 Example command:
 
-docker run --rm rag-document-assistant --file_path "path/to/your/document.txt" --question "What is machine learning?"
+docker run --rm rag-document-assistant --file_path path/to/your/document.txt --question "What is machine learning?"
 
