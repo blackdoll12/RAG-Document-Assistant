@@ -42,5 +42,5 @@ Custom Mode: In custom mode, you provide your own document file (in text format)
 If you want to use a file from your host machine (e.g., a custom PDF file), you can mount the file into the container using the -v flag  as in the example below:
 
 
-docker run --rm -v C:\Users\flori\Desktop\RAG_Assistant\Cuisine.txt:/app/data/Cuisine.txt rag-document-assistant  python src/main.py --file_path /app/data/Cuisine.txt --question "What is wine ?"
+docker run --rm -v C:\Users\username\Desktop\RAG_Assistant\Cuisine.txt:/app/data/Cuisine.txt rag-document-assistant  python src/main.py --file_path /app/data/Cuisine.txt --question "What is wine ?"
 
