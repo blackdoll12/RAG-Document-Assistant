@@ -36,11 +36,11 @@ Default Mode: In this mode, the program will process a default document (LinearA
 
 To run the program in default mode:
 
-docker run --rm rag-document-assistant --default
+docker run --rm rag-document-assistant 
 Custom Mode: 
 In custom mode, you provide your own document file (in text format) and the specific question you want to ask.
 
-Example command:
+If you want to use a file from your host machine (e.g., a custom PDF file), you can mount the file into the container using the -v flag:
 
-docker run --rm rag-document-assistant --file_path path/to/your/document.txt --question "What is machine learning?"
+docker run --rm -v /path/on/host:/app/data rag-document-assistant python src/main.py --file_path /app/data/MyDocument.pdf --question "What is a matrix?"
 
