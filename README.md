@@ -11,7 +11,7 @@ A generative model (flan T5) that generates answers based on the retrieved infor
 ## Requirements
 Software Requirements:
 Docker (for containerization)
-Python 3.7+ (for local development)
+Python 3.9+ (for local development)
 Required Python libraries (see requirements.txt):
 You can install the dependencies manually by running:
 
