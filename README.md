@@ -17,7 +17,7 @@ You can install the dependencies manually by running:
 
 ## Docker Setup
 Clone the repository:
-git clone [https://github.com/your-repository/document-assistant-rag.git](https://github.com/blackdoll12/RAG-Document-Assistant.git)
+git clone https://github.com/blackdoll12/RAG-Document-Assistant.git
 Go to the main folder
 cd document-assistant-rag
 Build the Docker image:
