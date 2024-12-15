@@ -39,7 +39,7 @@ To run the program in default mode:
 docker run --rm rag-document-assistant 
 Custom Mode: In custom mode, you provide your own document file (in text format) and the specific question you want to ask.
 
-If you want to use a file from your host machine (e.g., a custom PDF file), you can mount the file into the container using the -v flag  as in the example below:
+If you want to use a file from your host machine, you can mount the file into the container using the -v flag  as in the example below:
 
 
 docker run --rm -v C:\Users\username\Desktop\RAG_Assistant\Cuisine.txt:/app/data/Cuisine.txt rag-document-assistant  python src/main.py --file_path /app/data/Cuisine.txt --question "What is wine ?"
