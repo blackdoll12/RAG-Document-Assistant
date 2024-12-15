@@ -43,5 +43,5 @@ If you want to use a file from your host machine, you can mount the file into th
 
 
 docker run --rm -v C:\Users\username\Desktop\RAG_Assistant\Cuisine.txt:/app/data/Cuisine.txt rag-document-assistant  python src/main.py --file_path /app/data/Cuisine.txt --question "What is wine ?"
-Please that you are using the absolute path of your file and correctly mapping it  just like in the example presented above
+Please make sure that you are using the absolute path of your file and correctly mapping it  just like in the example presented above
 
